@@ -17,10 +17,7 @@ body {
     font-family: fantasy, cursive;
 }
 
-@media (max-width:768px) {
-.matrix-wrapper { text-align: center;
-}
-}
+
 .container {
     display: block;
     width: 500px;
@@ -145,4 +142,14 @@ ul li.editMode input[type=text] {
 
 ul li.editMode label {
     display:none;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .matrix-wrapper { 
+        text-align: center;
+    }
+
 }
