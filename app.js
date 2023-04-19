@@ -119,7 +119,7 @@ var taskIncomplete = function () {
   //When the checkbox is unchecked
   //Append the task list item to the #incompleteTasks.
   var listItem = this.parentNode;
-  incompleteTaskHolder.appendChild(listItem);
+  notCompletedTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
 };
 
@@ -151,9 +151,9 @@ var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
 
 //cycle over incompleteTaskHolder ul list items
 //for each list item
-for (var i = 0; i < incompleteTaskHolder.children.length; i++) {
+for (var i = 0; i < notCompletedTaskHolder.children.length; i++) {
   //bind events to list items chldren(tasksCompleted)
-  bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
+  bindTaskEvents(notCompletedTaskHolder.children[i], taskCompleted);
 }
 
 //cycle over completedTasksHolder ul list items
