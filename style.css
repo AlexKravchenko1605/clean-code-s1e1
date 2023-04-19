@@ -21,7 +21,7 @@ body {
 .matrix-wrapper { text-align: center;
 }
 }
-.centered-main-page-element {
+.container {
     display: block;
     width: 500px;
     margin: 0 auto 0;
