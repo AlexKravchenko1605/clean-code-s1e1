@@ -13,7 +13,7 @@ body {
 .matrix-wrapper img {
   width: 100%;
 }
-.matrix-wrapper .more-info {
+.more-info {
   font-family: fantasy, cursive;
 }
 
@@ -34,8 +34,7 @@ ul {
   margin: 0;
   padding: 0px;
 }
-li,
-h3 {
+li {
   list-style: none;
 }
 input,
@@ -82,7 +81,7 @@ input[type="text"]:focus {
 
 /* New Task */
 
-input#new-task {
+#new-task {
   width: 318px;
 }
 
@@ -91,7 +90,6 @@ li {
   overflow: hidden;
   padding: 0 0 20px 0;
   border-bottom: 1px solid #eee;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -122,7 +120,7 @@ li > input[type="text"] {
 }
 
 /* Completed */
-ul#completed-tasks label {
+#completed-tasks label {
   text-decoration: line-through;
   color: #888;
 }
