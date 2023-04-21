@@ -67,7 +67,6 @@ function editTask() {
 function deleteTask() {
   let listItem = this.parentNode;
   let ul = listItem.parentNode;
-
   ul.removeChild(listItem);
 }
 
@@ -88,9 +87,8 @@ function bindTaskEvents(taskListItem, checkBoxEventHandler) {
   let editButton = taskListItem.querySelector("button.edit");
   let deleteButton = taskListItem.querySelector("button.delete");
 
-  editButton.onclick = editTask;
-
-  deleteButton.onclick = deleteTask;
+  editButton.addEventListener("click", editTask);
+  deleteButton.addEventListener("click", deleteTask);
 
   checkBox.onchange = checkBoxEventHandler;
 }
