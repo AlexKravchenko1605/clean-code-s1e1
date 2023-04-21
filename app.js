@@ -78,14 +78,10 @@ function taskCompleted() {
 }
 
 function taskIncomplete() {
-  console.log("Incomplete Task...");
   let listItem = this.parentNode;
   notCompletedTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
 }
-
-addButton.onclick = addTask;
-addButton.addEventListener("click", addTask);
 
 function bindTaskEvents(taskListItem, checkBoxEventHandler) {
   let checkBox = taskListItem.querySelector("input[type=checkbox]");
@@ -98,6 +94,8 @@ function bindTaskEvents(taskListItem, checkBoxEventHandler) {
 
   checkBox.onchange = checkBoxEventHandler;
 }
+
+addButton.addEventListener("click", addTask);
 
 for (let i = 0; i < notCompletedTaskHolder.children.length; i++) {
   bindTaskEvents(notCompletedTaskHolder.children[i], taskCompleted);
