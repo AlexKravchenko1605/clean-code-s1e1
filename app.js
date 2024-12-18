@@ -17,17 +17,19 @@ function createNewTask(taskString) {
   label.className = "task";
 
   checkBox.type = "checkbox";
+  checkBox.className = "type-checkbox";
 
   editInput.type = "text";
-  editInput.className = "task";
+  editInput.className = "task type-text";
 
   editButton.innerText = "Edit";
   editButton.className = "edit";
 
   deleteButton.className = "delete";
   deleteButtonImg.src = "./remove.svg";
+  deleteButtonImg.className = "remove-img";
   deleteButton.appendChild(deleteButtonImg);
-
+  listItem.className = "list-item";
   listItem.appendChild(checkBox);
   listItem.appendChild(label);
   listItem.appendChild(editInput);
@@ -48,7 +50,7 @@ function addTask() {
 
 function editTask() {
   let listItem = this.parentNode;
-  let editInput = listItem.querySelector("input[type=text]");
+  let editInput = listItem.querySelector(".type-text");
   let label = listItem.querySelector("label");
   let editBtn = listItem.querySelector(".edit");
   let containsClass = listItem.classList.contains("edit-mode");
@@ -72,18 +74,20 @@ function deleteTask() {
 
 function taskCompleted() {
   let listItem = this.parentNode;
+  listItem.querySelector(".task").classList.add("completed-task");
   completedTasksHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskIncomplete);
 }
 
 function taskIncomplete() {
   let listItem = this.parentNode;
+  listItem.querySelector(".task").classList.remove("completed-task");
   notCompletedTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
 }
 
 function bindTaskEvents(taskListItem, checkBoxEventHandler) {
-  let checkBox = taskListItem.querySelector("input[type=checkbox]");
+  let checkBox = taskListItem.querySelector(".type-checkbox");
   let editButton = taskListItem.querySelector("button.edit");
   let deleteButton = taskListItem.querySelector("button.delete");
 
